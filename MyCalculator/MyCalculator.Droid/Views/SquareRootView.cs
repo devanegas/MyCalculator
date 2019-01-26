@@ -22,11 +22,11 @@ namespace MyCalculator.Droid.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MyCalculatorView);
-            Button button = FindViewById<Button>(Resource.Id.button);
+            //Button button = FindViewById<Button>(Resource.Id.button);
 
-            button.Click += (o, e) => {
-                Toast.MakeText(this, "Beep Boop", ToastLength.Short).Show();
-            };
+            //button.Click += (o, e) => {
+            //    Toast.MakeText(this, "Beep Boop", ToastLength.Short).Show();
+            //};
         }
 
 

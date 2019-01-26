@@ -6,6 +6,7 @@ using MyCalculator.Services;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using MvvmCross.Commands;
 
 namespace MyCalculator.ViewModels
 {
@@ -16,8 +17,14 @@ namespace MyCalculator.ViewModels
         public SquareRootViewModel(ISquareRootService squareRootService)
         {
             _squareRootService = squareRootService;
+
+            ClickCommand = new MvxCommand(click_Execute);
         }
-    
+
+        private void click_Execute()
+        {
+            Recalculate();
+        }
 
         public override async Task Initialize()
         {
@@ -35,46 +42,62 @@ namespace MyCalculator.ViewModels
             set
             {
                 SetField(ref _number, value);
-                SetField(ref _squareRoot, value);
-                Recalculate();
-                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Number)));
+
             }
 
         }
         private double _squareRoot;
         public double SquareRoot
         {
-            get => _squareRoot; 
+            get => _squareRoot;
             set
             {
-                    SetField(ref _squareRoot, value);
-                    //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SquareRoot)));
-              }
+                SetField(ref _squareRoot, value);
+                RaisePropertyChanged(nameof(SquareRootString));
+            }
         }
+
+
+        //private double _squared;
+        //public double Squared
+        //{
+        //    get => _squared;
+        //    set
+        //    {
+        //        SetField(ref _squared, value);
+        //        RaisePropertyChanged(nameof(Squared));
+        //    }
+        //}
+
+
+        public string SquareRootString => SquareRoot.ToString();
 
         private void Recalculate()
         {
             SquareRoot = _squareRootService.squareRoot(Number);
         }
 
+        private MvxCommand clickCommand;
+        //public MvxCommand ClickCommand => clickCommand ?? (clickCommand = new MvxCommand(() => Recalculate()));
+        public MvxCommand ClickCommand { get; private set; }
 
-        #region INotifyPropertyChanged Implementation
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //#region INotifyPropertyChanged Implementation
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
         protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(field, value))
                 return false;
             field = value;
-            OnPropertyChanged(propertyName);
+            RaisePropertyChanged(propertyName);
             return true;
         }
-        #endregion
-            
+//#endregion
+
 
     }
 }

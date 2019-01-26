@@ -21,18 +21,17 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="Square Root: " />
-    <TextView
+    <EditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:max="100"
-          local:MvxBind="Text SquareRoot" />
+          local:MvxBind="Text SquareRootString" />
     <View
           android:layout_width="match_parent"
           android:layout_height="3dp"
           android:background="#000000" />
 	<Button
-		android:onClick = ""
-		android:id="@+id/button"
+		local:MvxBind="Click ClickCommand"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
