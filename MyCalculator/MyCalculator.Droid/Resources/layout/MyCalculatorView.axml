@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:layout_centerVertical="true"
+	android:layout_centerHorizontal="true"
+	>
+
+
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Number:" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text Number" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Square Root: " />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:max="100"
+          local:MvxBind="Text SquareRoot" />
+    <View
+          android:layout_width="match_parent"
+          android:layout_height="3dp"
+          android:background="#000000" />
+	<Button
+		android:onClick = ""
+		android:id="@+id/button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:text="Square Root It!"/>
+</LinearLayout>
