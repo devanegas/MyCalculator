@@ -7,5 +7,6 @@ namespace MyCalculator.Services
     public interface ISquareRootService
     {
         double squareRoot(double number);
+        double squareIt(double number);
     }
 }

@@ -11,5 +11,10 @@ namespace MyCalculator.Services
         {
             return Math.Sqrt(number);
         }
+
+        public double squareIt(double number)
+        {
+            return number*number;
+        }
     }
 }

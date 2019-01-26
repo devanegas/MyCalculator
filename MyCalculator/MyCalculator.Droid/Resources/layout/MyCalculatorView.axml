@@ -8,7 +8,6 @@
 	android:layout_centerHorizontal="true"
 	>
 
-
     <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -21,19 +20,51 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="Square Root: " />
-    <EditText
+    <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:max="100"
           local:MvxBind="Text SquareRootString" />
+	<View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#000000" />
+
+	<TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Value Squared" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:max="100"
+          local:MvxBind="Text SquaredString" />
     <View
           android:layout_width="match_parent"
           android:layout_height="3dp"
           android:background="#000000" />
-	<Button
-		local:MvxBind="Click ClickCommand"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:text="Square Root It!"/>
-</LinearLayout>
+
+
+			<LinearLayout
+			   android:orientation="horizontal"
+		       android:layout_width="match_parent"
+               android:layout_height="match_parent"
+		    >
+			<Button
+				local:MvxBind="Click ClickCommand"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:text="Square Root It!"/>
+			<Button
+				local:MvxBind="Click ClickCommand2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:text="Square  It!"/>
+			</LinearLayout>
+
+	</LinearLayout>
+
+
+	

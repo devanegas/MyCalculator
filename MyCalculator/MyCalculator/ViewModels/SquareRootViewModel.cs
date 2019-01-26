@@ -19,11 +19,17 @@ namespace MyCalculator.ViewModels
             _squareRootService = squareRootService;
 
             ClickCommand = new MvxCommand(click_Execute);
+            ClickCommand2 = new MvxCommand(click_Execute2);
         }
 
         private void click_Execute()
         {
-            Recalculate();
+            RecalculateRoot();
+        }
+
+        private void click_Execute2()
+        {
+            RecalculateSquare();
         }
 
         public override async Task Initialize()
@@ -32,6 +38,7 @@ namespace MyCalculator.ViewModels
 
             _number = 16;
             _squareRoot = 4;
+            _squared = 256;
 
         }
 
@@ -58,28 +65,38 @@ namespace MyCalculator.ViewModels
         }
 
 
-        //private double _squared;
-        //public double Squared
-        //{
-        //    get => _squared;
-        //    set
-        //    {
-        //        SetField(ref _squared, value);
-        //        RaisePropertyChanged(nameof(Squared));
-        //    }
-        //}
+        private double _squared;
+        public double Squared
+        {
+            get => _squared;
+            set
+            {
+                SetField(ref _squared, value);
+                RaisePropertyChanged(nameof(SquaredString));
+            }
+        }
 
 
         public string SquareRootString => SquareRoot.ToString();
+        public string SquaredString => Squared.ToString();
 
-        private void Recalculate()
+        private void RecalculateRoot()
         {
             SquareRoot = _squareRootService.squareRoot(Number);
+        }
+
+
+        private void RecalculateSquare()
+        {
+            Squared = _squareRootService.squareIt(Number);
         }
 
         private MvxCommand clickCommand;
         //public MvxCommand ClickCommand => clickCommand ?? (clickCommand = new MvxCommand(() => Recalculate()));
         public MvxCommand ClickCommand { get; private set; }
+
+        private MvxCommand clickCommand2;
+        public MvxCommand ClickCommand2 { get; private set; }
 
         //#region INotifyPropertyChanged Implementation
         //public event PropertyChangedEventHandler PropertyChanged;
