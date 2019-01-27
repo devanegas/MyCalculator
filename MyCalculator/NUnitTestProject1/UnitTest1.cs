@@ -14,8 +14,7 @@ namespace Tests
         [Test]
         public void TestSquared()
         {
-            SquareRootService squareRootService = new SquareRootService();
-            var vm = new SquareRootViewModel(squareRootService);
+            var vm = new SquareRootViewModel(new SquareRootService());
 
             //var original = vm.Number;
         
