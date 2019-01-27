@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalculator", "MyCalculator\MyCalculator.csproj", "{56B3B569-176B-48E7-B01E-86CFEC7C7E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCalculator", "MyCalculator\MyCalculator.csproj", "{56B3B569-176B-48E7-B01E-86CFEC7C7E21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalculator.Droid", "MyCalculator.Droid\MyCalculator.Droid.csproj", "{6EBFAB91-0AFE-4392-B18E-C158EEC81425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{A7EED50B-5E7E-4CB3-A1F2-C0EF4DC4626D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{6EBFAB91-0AFE-4392-B18E-C158EEC81425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EBFAB91-0AFE-4392-B18E-C158EEC81425}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6EBFAB91-0AFE-4392-B18E-C158EEC81425}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A7EED50B-5E7E-4CB3-A1F2-C0EF4DC4626D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EED50B-5E7E-4CB3-A1F2-C0EF4DC4626D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EED50B-5E7E-4CB3-A1F2-C0EF4DC4626D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EED50B-5E7E-4CB3-A1F2-C0EF4DC4626D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

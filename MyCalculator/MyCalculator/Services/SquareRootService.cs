@@ -7,13 +7,17 @@ namespace MyCalculator.Services
 {
     public class SquareRootService : ISquareRootService
     {
+
         public double squareRoot(double number)
         {
+            if (number < 0)
+                throw new ArgumentException("Invalid Entry");
             return Math.Sqrt(number);
         }
 
         public double squareIt(double number)
         {
+
             return number*number;
         }
     }
