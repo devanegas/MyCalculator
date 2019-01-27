@@ -11,7 +11,7 @@ namespace MyCalculator.Services
         public double squareRoot(double number)
         {
             if (number < 0)
-                throw new ArgumentException("Invalid Entry");
+                return 0;
             return Math.Sqrt(number);
         }
 

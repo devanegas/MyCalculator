@@ -17,13 +17,13 @@ namespace MyCalculator.ViewModels
         public SquareRootViewModel(ISquareRootService squareRootService)
         {
             _squareRootService = squareRootService ?? throw new System.ArgumentNullException(nameof(squareRootService)); ;
-            ClickCommand = new MvxCommand(click_Execute);
-            ClickCommand2 = new MvxCommand(click_Execute2);
+            ClickCommand = new MvxCommand(()=>RecalculateRoot());
+            ClickCommand2 = new MvxCommand(()=>RecalculateSquare());
         }
 
         public SquareRootViewModel()
         {
-            Number = 10;
+            Number = 100;
         }
 
         private void click_Execute()
